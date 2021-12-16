@@ -1,7 +1,7 @@
 import "./Comment.css";
 
 const Comment = (props) => {
-  const { name, email, message, date } = props;
+  const { name, email, message, date, onDeleteComment } = props;
 
   return (
     <div className="comment">
@@ -9,6 +9,7 @@ const Comment = (props) => {
       <p>{email}</p>
       <p>{message}</p>
       <p>{date.toString()}</p>
+      <button onClick={onDeleteComment}>&times;</button>
     </div>
   );
 };
