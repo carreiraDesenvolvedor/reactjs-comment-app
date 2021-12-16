@@ -18,18 +18,34 @@ class App extends React.Component {
         message: "Realmente o jonathan é muito lindão.",
       },
     ],
+    form: {
+      name: "",
+      email: "",
+      message: "",
+    },
   };
 
-  addComment = () => {
-    const newComment = {
-      name: "Felipe Melo",
-      email: "felipe@gmail.com",
-      date: new Date(),
-      message: "De fato o Jonathan é muito lindo.",
-    };
+  addComment = (event) => {
+    event.preventDefault();
+
+    const newComment = { ...this.state.form, date: new Date() };
 
     this.setState({
       comments: [...this.state.comments, newComment],
+      form: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    });
+  };
+
+  onFieldChanged = (event) => {
+    const newCommentForm = this.state.form;
+    newCommentForm[event.target.name] = event.target.value;
+
+    this.setState({
+      form: newCommentForm,
     });
   };
 
@@ -48,7 +64,40 @@ class App extends React.Component {
             />
           );
         })}
-        <button onClick={this.addComment}>Adicionar Comentário.</button>
+        <form onSubmit={this.addComment}>
+          <h2>Add a comment</h2>
+          <div>
+            <input
+              onChange={this.onFieldChanged}
+              value={this.state.form.name}
+              type="text"
+              name="name"
+              placeholder="Type here your name"
+              required="required"
+            />
+          </div>
+          <div>
+            <input
+              onChange={this.onFieldChanged}
+              value={this.state.form.email}
+              type="email"
+              name="email"
+              placeholder="Type  here your email"
+              required="required"
+            />
+          </div>
+          <div>
+            <textarea
+              onChange={this.onFieldChanged}
+              name="message"
+              rows="4"
+              placeholder="Type here your message"
+              value={this.state.form.message}
+              required="required"
+            />
+          </div>
+          <button type="submit">Add a comment</button>
+        </form>
       </div>
     );
   }
