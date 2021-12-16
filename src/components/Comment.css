@@ -1,5 +1,55 @@
 .comment {
-    border: 1px solid #555;
+    background-color: #272727;
     margin-bottom: 2rem;
-    background-color: #eee;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    padding: 1rem;
+    display: flex;
+}
+
+.comment .content {
+    width: 100%;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.comment img {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.comment .content .name {
+    font-size: 1.25rem;
+    margin: 0px;
+}
+
+.comment .content .email {
+    color: #ffffff60;
+}
+
+.comment .content .message {
+    color: #ffffff87;
+    font-weight: bold;
+}
+
+.comment .content .date {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #ffffff60;
+}
+
+.comment .content .delete {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    color: #ffffff87;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.comment .content .delete:hover {
+    background: #ffffff36;
 }
