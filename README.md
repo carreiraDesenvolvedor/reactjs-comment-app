@@ -2,6 +2,16 @@
 
 Project created using ReactJs
 
+## Some application screenshots
+
+![](https://github.com/carreiraDesenvolvedor/reactjs-comment-app/blob/main/resources/screenshots/first.png)
+
+![](https://github.com/carreiraDesenvolvedor/reactjs-comment-app/blob/main/resources/screenshots/second.png)
+
+![](https://github.com/carreiraDesenvolvedor/reactjs-comment-app/blob/main/resources/screenshots/third.png)
+
+![](https://github.com/carreiraDesenvolvedor/reactjs-comment-app/blob/main/resources/screenshots/4.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
